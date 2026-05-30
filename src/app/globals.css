@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-white text-ink-800;
+    font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display font-bold tracking-tight text-navy-900;
+  }
+  ::selection {
+    background: theme(colors.cyan.DEFAULT / 30%);
+    color: theme(colors.navy.900);
+  }
+  *:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px theme(colors.cyan.DEFAULT / 35%);
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .prose-apex {
+    @apply max-w-prose mx-auto text-ink-800 leading-relaxed;
+  }
+  .prose-apex h2 {
+    @apply mt-10 mb-3 text-2xl font-bold text-navy-900;
+  }
+  .prose-apex h3 {
+    @apply mt-8 mb-2 text-xl font-bold text-navy-900;
+  }
+  .prose-apex p {
+    @apply mb-4;
+  }
+  .prose-apex ul {
+    @apply mb-5 pl-6 list-disc;
+  }
+  .prose-apex ul li {
+    @apply mb-1.5;
+  }
+  .prose-apex a {
+    @apply text-cyan-deep underline-offset-2 hover:underline;
+  }
+  .prose-apex strong {
+    @apply text-navy-900;
+  }
+  .callout {
+    @apply my-6 rounded border-l-4 border-cyan bg-ink-50 px-5 py-4 text-ink-800;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
