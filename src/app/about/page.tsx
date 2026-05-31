@@ -8,13 +8,12 @@ import { siteConfig } from "@/lib/siteConfig";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "ApexShield LLC — California privacy and security consultancy. Owned by Erwin Bruno and Jinjie (Bobby) Dai. Engineering partner: LockRidge LLC (Noah Shaffer).",
+    "ApexShield LLC — California privacy and security consultancy. Led by Erwin Bruno and Jinjie (Bobby) Dai. Engineering partner: LockRidge LLC (Noah Shaffer).",
 };
 
 interface TeamMember {
   name: string;
   role: string;
-  ownership?: string;
   bio: string;
   /** When set, renders an image at this public path as the avatar. */
   avatarSrc?: string;
@@ -26,7 +25,6 @@ const team: TeamMember[] = [
   {
     name: "Erwin Bruno",
     role: "Managing Member",
-    ownership: "60% owner",
     bio:
       "Premier cybersecurity engineer and US Navy veteran. Erwin leads engagements, scopes audits, and is the primary point of contact for clients.",
     avatarTone: "navy",
@@ -34,7 +32,6 @@ const team: TeamMember[] = [
   {
     name: "Jinjie (Bobby) Dai",
     role: "Member",
-    ownership: "40% owner",
     bio:
       "Premier cybersecurity engineer with a veteran background. Bobby drives technical assessments and the security tooling behind every engagement.",
     avatarTone: "navy",
@@ -105,9 +102,6 @@ export default function AboutPage() {
                 </h3>
                 <div className="mt-0.5 text-sm font-semibold text-cyan-deep">
                   {m.role}
-                  {m.ownership && (
-                    <span className="text-ink-500"> — {m.ownership}</span>
-                  )}
                 </div>
                 <p className="mt-3 flex-1 text-ink-600">{m.bio}</p>
               </article>
